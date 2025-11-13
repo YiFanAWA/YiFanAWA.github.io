@@ -48,5 +48,93 @@
     <!-- 可扩展更多内容 -->
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+<div id="ai-assistant" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+  <div id="chat-window" style="display: none; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); padding: 15px;">
+    <div id="chat-header" style="font-weight: bold; margin-bottom: 10px;">AI助手</div>
+    <div id="chat-messages" style="height: 320px; overflow-y: auto; margin-bottom: 10px;"></div>
+    <input type="text" id="user-input" placeholder="输入您的问题..." style="width: 100%; padding: 5px;">
+  </div>
+  <button id="toggle-chat" style="background: #25c6db; color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 24px; cursor: pointer;">
+    💬
+  </button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('toggle-chat');
+    const chatWindow = document.getElementById('chat-window');
+    const userInput = document.getElementById('user-input');
+    const chatMessages = document.getElementById('chat-messages');
+    
+    // 切换聊天窗口显示
+    toggleBtn.addEventListener('click', function() {
+      chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+    });
+    
+    // 简单的预设回答
+    const responses = {
+      '你好': '您好！我是您的AI助手，有什么可以帮助您的吗？',
+      '你是谁': '我是这个网站的AI助手，可以回答您的问题。',
+      '联系方式': '您可以通过邮件 liu_yifan66@126.com 联系站长。',
+      '默认': '抱歉，我不太明白您的意思。您可以问一些关于这个网站或站长的问题。'
+    };
+    
+    // 处理用户输入
+    userInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        const message = userInput.value.trim();
+        if (message) {
+          // 显示用户消息
+          addMessage(message, 'user');
+          
+          // 生成AI回复
+          setTimeout(() => {
+            const reply = getReply(message);
+            addMessage(reply, 'ai');
+          }, 500);
+          
+          userInput.value = '';
+        }
+      }
+    });
+    
+    // 添加消息到聊天窗口
+    function addMessage(text, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.style.marginBottom = '10px';
+      messageDiv.style.padding = '5px';
+      messageDiv.style.borderRadius = '5px';
+      
+      if (sender === 'user') {
+        messageDiv.style.background = '#e3f2fd';
+        messageDiv.style.textAlign = 'right';
+        messageDiv.textContent = '您: ' + text;
+      } else {
+        messageDiv.style.background = '#f5f5f5';
+        messageDiv.textContent = '助手: ' + text;
+      }
+      
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    // 获取回复
+    function getReply(message) {
+      const lowerMsg = message.toLowerCase();
+      for (const [key, value] of Object.entries(responses)) {
+        if (lowerMsg.includes(key.toLowerCase())) {
+          return value;
+        }
+      }
+      return responses['默认'];
+    }
+    
+    // 初始化欢迎消息
+    setTimeout(() => {
+      addMessage('您好！欢迎访问本网站。我是AI助手，可以回答您的问题。', 'ai');
+    }, 1000);
+  });
+</script>
 </body>
 </html>
