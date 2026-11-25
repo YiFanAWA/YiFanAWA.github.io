@@ -1,140 +1,760 @@
-
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang='zh-CN'>
 <head>
-  <meta charset="UTF-8">
-  <title>YiFanAWA.github.io | 向日葵先生</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      background: linear-gradient(to left, #25c6db,#ffffff);
-    }
-    .avatar { width: 120px; border-radius: 50%; margin-bottom: 20px;}
-    .social-icons a { margin: 0 10px; font-size: 1.5em;}
-  </style>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>刘一帆 Yifan Liu — GitHub 个人主页</title>
+<meta name='description' content='刘一帆（GitHub @YiFanAWA）的个人主页：项目、仓库与动态，数据实时来自 GitHub。'>
+<link rel='canonical' href='https://yifanawa.github.io/'>
+<meta property='og:type' content='website'>
+<meta property='og:title' content='刘一帆 Yifan Liu — 个人主页'>
+<meta property='og:description' content='AI 应用与全栈开发：Agent 平台、LLM 工作流、中医药研究与 NLP。'>
+<meta property='og:url' content='https://yifanawa.github.io/'>
+<meta property='og:image' content='https://avatars.githubusercontent.com/u/184716029?v=4'>
+<meta name='theme-color' content='#efe8dc'>
+<link rel='icon' href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23c4421f'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='%23efe8dc' font-family='Georgia,serif' font-style='italic'%3EY%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --paper:#efe8dc;--paper-2:#e3d7c3;--ink:#1c1a17;--ink-soft:#6a6359;
+  --vermilion:#c4421f;--ochre:#d89a3c;--indigo:#1f2d4a;--sage:#8a9a7b;
+  --serif:'Noto Serif SC','Source Han Serif SC','Songti SC','STSong','SimSun',serif;
+  --latin:'Cormorant Garamond','Playfair Display','Didot','Bodoni 72',Georgia,serif;
+  --mono:ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body:has(dialog[open]){overflow:hidden}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.28;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+::selection{background:var(--vermilion);color:var(--paper)}
+a{color:inherit;text-decoration:none}
+section{padding:18vh 6vw}
+
+.cursor{position:fixed;left:-9px;top:-9px;width:18px;height:18px;border-radius:50%;background:#efe8dc;mix-blend-mode:difference;pointer-events:none;z-index:200;transition:width .35s var(--ease),height .35s var(--ease),left .35s var(--ease),top .35s var(--ease)}
+.cursor.big{width:72px;height:72px;left:-36px;top:-36px}
+
+.nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:26px 6vw;z-index:50;font-size:13px;letter-spacing:.3em;mix-blend-mode:difference;color:#f3ede3}
+.nav .links a{margin-left:2.4em}
+.nav .mark{font-family:var(--latin);font-style:italic;letter-spacing:.04em;font-size:22px}
+
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.85;mix-blend-mode:multiply;animation:drift 26s ease-in-out infinite alternate;z-index:-1}
+.b1{width:52vmax;height:52vmax;background:radial-gradient(circle at 30% 30%,#f2b25c,#c4421f 72%);top:-20vmax;right:-14vmax}
+.b2{width:44vmax;height:44vmax;background:radial-gradient(circle at 60% 40%,#8ea3c6,#1f2d4a 76%);bottom:-22vmax;left:-12vmax;animation-duration:32s;animation-delay:-8s}
+.b3{width:24vmax;height:24vmax;background:radial-gradient(circle,#efdca8,#8a9a7b 82%);top:30%;left:40%;animation-duration:21s;animation-delay:-4s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(4vw,-3vh) scale(1.08)}100%{transform:translate(-3vw,4vh) scale(.95)}}
+
+.hero{position:relative;min-height:100vh;padding:16vh 6vw 9vh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-inner{position:relative;width:100%}
+.eyebrow{font-size:12px;letter-spacing:.6em;margin-bottom:3vh}
+.hero-name{font-family:var(--latin);font-weight:300;font-size:clamp(96px,19vw,300px);line-height:.82;letter-spacing:-.04em}
+.hero-name span{display:block}
+.hero-name .l2{font-style:italic;padding-left:14vw}
+.hero-name em{color:var(--vermilion);font-style:normal}
+.hero-foot{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:4vw;margin-top:7vh;padding-top:3vh;border-top:1px solid var(--ink);align-items:start}
+.role{font-size:20px;font-weight:700;line-height:1.5}
+.role span{font-weight:400;font-size:14px;color:var(--ink-soft);letter-spacing:.1em}
+.intro{font-size:17px}
+.now{font-size:14px;background:rgba(239,232,220,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:18px 20px;border:1px solid rgba(28,26,23,.15)}
+.now b{display:flex;align-items:center;gap:10px;font-family:var(--latin);letter-spacing:.3em;font-size:12px;margin-bottom:6px}
+.now b::before{content:'';width:8px;height:8px;border-radius:50%;background:#5f8a4f;animation:pulse 2s infinite}
+.now a{border-bottom:1px solid var(--vermilion)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(95,138,79,.6)}70%,100%{box-shadow:0 0 0 10px rgba(95,138,79,0)}}
+.vertical{position:absolute;writing-mode:vertical-rl;font-size:14px;letter-spacing:.8em}
+.v-left{left:2.2vw;top:50%;transform:translateY(-50%)}
+.v-right{right:2.2vw;top:18vh}
+
+.strip{overflow:hidden;white-space:nowrap;border-block:1px solid var(--ink);padding:16px 0}
+.strip div{display:inline-block;animation:slide 50s linear infinite;font-family:var(--latin);font-style:italic;font-size:30px}
+.strip span{color:var(--vermilion);font-style:normal;font-family:var(--serif);margin:0 .6em}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+.sec-head{display:flex;align-items:flex-end;gap:3vw;max-width:1400px;margin:0 auto 9vh;padding-bottom:22px;border-bottom:1px solid var(--ink);flex-wrap:wrap}
+.sec-no{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--vermilion)}
+.sec-head h2{font-size:clamp(42px,6vw,92px);font-weight:900;line-height:1;flex:1}
+.sec-head h2 i{display:block;font-family:var(--latin);font-weight:400;font-size:.32em;color:var(--ink-soft);margin-top:.6em;letter-spacing:.02em}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:inherit;font-size:14px;letter-spacing:.15em;padding:8px 18px;border:1px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);cursor:pointer;transition:background .3s,color .3s}
+.chip[aria-pressed=true],.chip:hover{background:var(--ink);color:var(--paper)}
+
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:7vw 3vw;max-width:1400px;margin:0 auto;align-items:start}
+.work{grid-column:span 4;cursor:pointer;outline:none}
+.work.tall{grid-column:span 5}
+.work.wide{grid-column:span 7}
+.work.center{grid-column:3 / span 8}
+.work.offset{margin-top:14vh}
+.grid.filtered .work{grid-column:span 6!important;margin-top:0!important}
+.work.hide{display:none}
+.canvas{position:relative;aspect-ratio:4/5;overflow:hidden;isolation:isolate;box-shadow:0 34px 60px -34px rgba(28,26,23,.55);transition:transform .9s var(--ease)}
+.wide .canvas,.center .canvas{aspect-ratio:16/10}
+.work:hover .canvas{transform:translateY(-10px) rotate(-.5deg)}
+.work:focus-visible .canvas{outline:2px solid var(--vermilion);outline-offset:8px}
+.canvas>*,.canvas::before,.canvas::after{position:absolute;content:''}
+.view{left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;text-align:center;font-size:14px;letter-spacing:.2em;line-height:1.5;transform:scale(0);transition:transform .5s var(--ease);z-index:5}
+.work:hover .view,.work:focus-visible .view{transform:scale(1)}
+.repo-tag{left:14px;bottom:14px;z-index:4;font:12px/1 var(--mono);color:#efe8dc;background:rgba(28,26,23,.6);padding:8px 10px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.caption{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;gap:12px}
+.caption h3{font-size:20px;font-weight:700;line-height:1.4}
+.caption h3 i{font-family:var(--latin);font-weight:400;margin-left:.5em;color:var(--ink-soft)}
+.caption small{display:block;color:var(--ink-soft);font-size:13px;letter-spacing:.12em}
+.caption .no{font-family:var(--latin);font-style:italic;font-size:30px;color:var(--vermilion);line-height:1}
+
+.a1{background:linear-gradient(#f4dcae 0%,#eaa765 56%,#1f2d4a 56%)}
+.a1::before{width:56%;aspect-ratio:1;border-radius:50%;left:22%;top:30%;background:radial-gradient(circle,#c4421f 0 58%,#d9652f 59% 100%)}
+.a1::after{left:0;right:0;top:56%;bottom:0;background:repeating-linear-gradient(180deg,transparent 0 9px,#1f2d4a 9px 16px),linear-gradient(90deg,#1f2d4a 26%,#c4421f 26% 74%,#1f2d4a 74%);-webkit-mask:linear-gradient(#000 10%,transparent 85%);mask:linear-gradient(#000 10%,transparent 85%)}
+.a1 .base{left:0;right:0;top:56%;bottom:0;background:#1f2d4a;z-index:-1}
+.a2{background:repeating-radial-gradient(circle at 50% 112%,#1f2d4a 0 13px,#e3d7c3 13px 27px)}
+.a2::after{inset:0;background:linear-gradient(#efe8dc 0%,transparent 45%)}
+.a3{background:#dccdb3}
+.a3 .wall{inset:0 0 22% 0;background:linear-gradient(100deg,#e7dbc6 0 58%,#d3c2a4 58%)}
+.a3 .arch{left:10%;bottom:22%;width:26%;height:62%;background:#c4421f;border-radius:999px 999px 0 0}
+.a3 .orb{left:42%;bottom:22%;width:20%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a4d75,#1f2d4a 70%)}
+.a3 .half{right:12%;bottom:22%;width:22%;aspect-ratio:2/1;border-radius:999px 999px 0 0;background:#d89a3c}
+.a3 .shelf{left:0;right:0;bottom:0;height:22%;background:#8a7a62}
+.a3 .shadow{left:36%;bottom:12%;width:44%;height:10%;background:rgba(28,26,23,.25);filter:blur(6px);transform:skewX(-40deg)}
+.a4{background:conic-gradient(from 210deg at 32% 68%,#efe8dc,#d89a3c 18%,#c4421f 34%,#1f2d4a 55%,#8a9a7b 76%,#efe8dc)}
+.a4::before{inset:12%;border:1px solid rgba(239,232,220,.8);border-radius:50%}
+.a4::after{inset:28%;border:1px solid rgba(239,232,220,.5);border-radius:50%;transform:translate(14%,-10%)}
+.a5{background:radial-gradient(rgba(239,232,220,.75) 1px,transparent 1.6px) 0 0/22px 22px,linear-gradient(#0d1424,#1f2d4a 70%,#34466c)}
+.a5 .moon{width:34%;aspect-ratio:1;border-radius:50%;top:14%;right:16%;box-shadow:inset -22px 10px 0 0 #efe8dc}
+.a5 .trail{width:140%;height:1px;background:#c4421f;left:-20%;top:72%;transform:rotate(-24deg);box-shadow:0 0 12px #c4421f}
+.a5 .sea{left:0;right:0;bottom:0;height:20%;background:repeating-linear-gradient(180deg,#0d1424 0 4px,#1f2d4a 4px 7px)}
+.a7{background:radial-gradient(circle at 50% 50%,#34466c,#1f2d4a 58%,#0d1424)}
+.a7::before{inset:16%;border:1px dashed rgba(239,232,220,.45);border-radius:50%;animation:spin 80s linear infinite}
+.a7::after{inset:33%;border:1px solid rgba(216,154,60,.7);border-radius:50%}
+.a7 .ln{background:rgba(239,232,220,.22)}
+.a7 .lv{left:50%;top:16%;width:1px;height:68%}
+.a7 .lh{top:50%;left:16%;height:1px;width:68%}
+.a7 .core{width:20%;aspect-ratio:1;border-radius:50%;left:40%;top:50%;transform:translateY(-50%);background:radial-gradient(circle at 35% 30%,#f2b25c,#c4421f 70%);box-shadow:0 0 50px #c4421f}
+.a7 .n{width:7%;aspect-ratio:1;border-radius:50%;background:#efe8dc;transform:translate(-50%,-50%)}
+.a7 .n1{left:50%;top:16%}.a7 .n2{left:84%;top:50%;background:#d89a3c}.a7 .n3{left:50%;top:84%;background:#8a9a7b}.a7 .n4{left:16%;top:50%}
+.a8{background:#e7dbc6}
+.a8 .sn{width:20%;aspect-ratio:1;border-radius:50%;right:14%;top:12%;background:#d89a3c;opacity:.85}
+.a8 .stem{left:44%;top:20%;width:2px;height:64%;background:#1f2d4a}
+.a8 .lf{width:16%;height:14%;background:#8a9a7b}
+.a8 .l1{left:44%;top:30%;border-radius:0 100% 0 100%;transform:rotate(-18deg);transform-origin:left bottom}
+.a8 .l2{left:28%;top:44%;border-radius:100% 0 100% 0;transform:rotate(18deg);transform-origin:right bottom;background:#5f7a52}
+.a8 .l3{left:44%;top:58%;border-radius:0 100% 0 100%;transform:rotate(-10deg);transform-origin:left bottom;background:#6f8a62}
+.a8 .fl{width:7%;aspect-ratio:1;border-radius:50%;left:44%;top:20%;transform:translate(-45%,-50%);background:#c4421f;box-shadow:0 0 0 8px rgba(196,66,31,.18)}
+.a8 .gd{left:0;right:0;bottom:0;height:16%;background:repeating-linear-gradient(90deg,#8a7a62 0 6px,#7a6a52 6px 12px)}
+.a9{background:#1c1a17}
+.a9::before,.a9::after{left:0;right:0;height:4%;background:repeating-linear-gradient(90deg,rgba(239,232,220,.7) 0 10px,transparent 10px 22px)}
+.a9::before{top:20%}.a9::after{top:76%}
+.a9 .film{left:0;right:0;top:26%;height:48%;background:repeating-linear-gradient(90deg,transparent 0 23%,#1c1a17 23% 25%),linear-gradient(90deg,#c4421f,#d89a3c 30%,#8a9a7b 55%,#1f2d4a 80%,#c4421f)}
+.a9 .lens{width:40%;aspect-ratio:1;border-radius:50%;left:36%;top:50%;transform:translateY(-58%);border:6px solid #efe8dc;background:radial-gradient(circle at 35% 30%,rgba(239,232,220,.35),rgba(239,232,220,.05) 60%);backdrop-filter:saturate(1.6) brightness(1.15);-webkit-backdrop-filter:saturate(1.6) brightness(1.15)}
+.a9 .hd{width:5%;height:20%;left:72%;top:60%;background:#efe8dc;border-radius:4px;transform:rotate(-45deg)}
+.gh.off{background:transparent;color:var(--ink-soft);border:1px dashed rgba(28,26,23,.4);cursor:default}
+.gh.off span{display:none}
+.repo-list a.priv{cursor:default}
+.a6{background:#e3d7c3}
+.a6 .s{border-radius:50%;filter:blur(34px);mix-blend-mode:multiply}
+.a6 .s1{width:46%;height:72%;left:8%;top:12%;background:#c4421f}
+.a6 .s2{width:40%;height:60%;left:38%;top:28%;background:#d89a3c}
+.a6 .s3{width:30%;height:46%;right:8%;top:6%;background:#8a9a7b}
+.a6 .s4{width:22%;height:34%;left:60%;bottom:4%;background:#1f2d4a;opacity:.8}
+
+.about{display:grid;grid-template-columns:5fr 7fr;gap:6vw;max-width:1400px;margin:0 auto;align-items:start}
+.portrait{background:linear-gradient(#e7dbc6 0 70%,#8a7a62 70%)}
+.portrait .arch{left:16%;right:16%;top:8%;bottom:30%;border-radius:999px 999px 0 0;background:linear-gradient(#f4dcae,#eaa765 60%,#c4421f)}
+.portrait .sun{width:30%;aspect-ratio:1;border-radius:50%;left:35%;top:40%;background:#efe8dc;opacity:.9}
+.portrait .shade{left:34%;bottom:22%;width:52%;height:6%;background:rgba(28,26,23,.28);filter:blur(6px);transform:skewX(-45deg)}
+.portrait .torso{left:32%;right:32%;top:56%;bottom:30%;background:#1f2d4a;border-radius:999px 999px 0 0}
+.portrait .head{width:16%;aspect-ratio:1;border-radius:50%;left:42%;top:43%;background:#1f2d4a}
+.portrait-cap{margin-top:16px;font-size:13px;color:var(--ink-soft);letter-spacing:.12em}
+.lead{font-size:clamp(26px,2.8vw,44px);line-height:1.5;font-weight:900;margin-bottom:1.1em}
+.about-text>p:not(.lead){font-size:clamp(16px,1.3vw,19px);margin-bottom:1.3em;text-align:justify;color:#2e2b26}
+.about-text code{font-family:var(--mono);font-size:.9em;background:rgba(28,26,23,.07);padding:1px 6px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--ink);margin:5vh 0}
+.stats div{padding:24px 0}
+.stats b{display:block;font-family:var(--latin);font-weight:300;font-size:clamp(44px,5vw,72px);line-height:1}
+.stats b sup{font-size:.4em;color:var(--vermilion)}
+.stats span{font-size:13px;letter-spacing:.2em;color:var(--ink-soft)}
+.label{font-size:12px;letter-spacing:.5em;color:var(--vermilion);font-weight:400;margin-bottom:14px}
+.tools ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.tools li{border:1px solid rgba(28,26,23,.35);border-radius:999px;padding:6px 16px;font-size:14px}
+
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:3vw;max-width:1400px;margin:0 auto}
+.svc{border-top:1px solid var(--ink);padding-top:26px}
+.svc>span{font-family:var(--latin);font-style:italic;font-size:44px;color:var(--vermilion);line-height:1}
+.svc h3{font-size:24px;margin:16px 0 10px}
+.svc p{font-size:15px;color:#3b372f;margin-bottom:16px}
+.svc li{list-style:none;font-size:14px;padding:8px 0;border-bottom:1px dashed rgba(28,26,23,.25)}
+.process-title{max-width:1400px;margin:16vh auto 5vh}
+.process{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.process::before{content:'';position:absolute;left:0;right:0;top:34px;height:1px;background:var(--ink)}
+.step{position:relative;padding-right:2vw}
+.step b{display:grid;place-items:center;width:68px;height:68px;border-radius:50%;background:var(--paper);border:1px solid var(--ink);font-family:var(--latin);font-style:italic;font-weight:400;font-size:22px;margin-bottom:22px;position:relative;transition:background .4s,color .4s,border-color .4s}
+.step:hover b{background:var(--vermilion);color:var(--paper);border-color:var(--vermilion)}
+.step h4{font-size:22px}
+.step p{font-size:15px;color:var(--ink-soft)}
+
+.timeline{list-style:none;max-width:1400px;margin:0 auto}
+.timeline li{display:grid;grid-template-columns:1fr 1.6fr 1.2fr 2.2fr;gap:2vw;padding:30px 2vw;border-bottom:1px solid rgba(28,26,23,.25);align-items:baseline;transition:background .4s,color .4s}
+.timeline li:hover{background:var(--ink);color:var(--paper)}
+.yr{font-family:var(--latin);font-style:italic;font-size:20px}
+.role-t{font-size:20px;font-weight:700}
+.role-t a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s var(--ease)}
+.timeline li:hover .role-t a{background-size:100% 1px}
+.lang-t{font-family:var(--mono);font-size:14px}
+.note{font-size:15px;opacity:.7}
+
+.quote{background:var(--ink);color:var(--paper);text-align:center;padding:24vh 8vw 14vh;position:relative;overflow:hidden}
+.ring{position:absolute;left:50%;top:42%;border-radius:50%;pointer-events:none}
+.r1{width:70vmax;height:70vmax;margin:-35vmax 0 0 -35vmax;border:1px solid rgba(239,232,220,.12)}
+.r2{width:46vmax;height:46vmax;margin:-23vmax 0 0 -23vmax;border:1px dashed rgba(216,154,60,.35);animation:spin 120s linear infinite}
+.r3{width:10vmax;height:10vmax;margin:-26vmax 0 0 16vmax;background:radial-gradient(circle,#c4421f,transparent 70%);filter:blur(10px);opacity:.7}
+@keyframes spin{to{transform:rotate(360deg)}}
+.quote blockquote{position:relative;font-size:clamp(28px,3.8vw,58px);line-height:1.5;font-weight:900;max-width:16em;margin:0 auto}
+.quote blockquote em{font-style:normal;color:var(--ochre)}
+.quote cite{position:relative;display:block;margin-top:5vh;font-style:normal;font-size:16px;letter-spacing:.2em;color:rgba(239,232,220,.6)}
+.clients{position:relative;display:flex;justify-content:center;align-items:baseline;flex-wrap:wrap;gap:3vh 4.5vw;margin-top:14vh;padding-top:6vh;border-top:1px solid rgba(239,232,220,.15);color:rgba(239,232,220,.5);font-size:24px}
+.clients span{transition:color .3s}
+.clients span:hover{color:var(--paper)}
+.clients .c1{font-family:var(--mono);font-size:22px}
+.clients .c2{font-family:var(--latin);font-style:italic;font-size:30px}
+.clients .c3{font-weight:900}
+.clients .c4{font-family:var(--latin);letter-spacing:.35em;font-size:20px}
+
+.contact{background:var(--vermilion);color:var(--paper);position:relative;overflow:hidden;isolation:isolate}
+.contact .blob{mix-blend-mode:screen;opacity:.55}
+.contact .c-b1{width:50vmax;height:50vmax;right:-15vmax;top:-22vmax;background:radial-gradient(circle,#d89a3c,transparent 70%)}
+.contact .c-b2{width:34vmax;height:34vmax;left:-10vmax;bottom:-16vmax;background:radial-gradient(circle,#efdca8,transparent 70%);animation-delay:-10s}
+.contact .sec-no{color:var(--paper);opacity:.85}
+.contact-title{font-size:clamp(56px,10vw,168px);line-height:1.05;font-weight:900;margin:4vh 0 6vh}
+.contact-title em{font-style:normal;color:transparent;-webkit-text-stroke:2px var(--paper)}
+.mail{display:inline-flex;gap:.4em;font-family:var(--latin);font-style:italic;font-size:clamp(28px,4.4vw,64px);background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;transition:background-size .6s var(--ease);padding-bottom:6px}
+.mail:hover{background-size:100% 2px}
+.mail span{font-style:normal;transition:transform .4s var(--ease)}
+.mail:hover span{transform:translateX(12px)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4vw;margin-top:12vh;border-top:1px solid rgba(239,232,220,.4);padding-top:5vh}
+.contact .label{color:var(--paper);opacity:.75}
+.contact p{font-size:18px}
+.social{list-style:none;display:flex;flex-wrap:wrap;gap:6px 22px}
+.social a{font-size:18px;border-bottom:1px solid transparent;transition:border-color .3s}
+.social a:hover{border-color:var(--paper)}
+#clock{font-family:var(--latin);font-size:22px}
+
+footer{padding:5vh 6vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;font-size:13px;color:var(--ink-soft);letter-spacing:.15em}
+footer .latin{font-family:var(--latin);font-style:italic;letter-spacing:.04em;font-size:16px;color:var(--ink)}
+footer a{border-bottom:1px solid rgba(28,26,23,.3);margin-left:1.2em}
+footer a:hover{color:var(--vermilion);border-color:var(--vermilion)}
+
+dialog.case{border:0;padding:0;margin:auto;width:min(1120px,92vw);max-height:88vh;background:var(--paper);color:var(--ink);overflow:auto;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+dialog.case[open]{display:grid;grid-template-columns:1fr 1.1fr;animation:pop .5s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(30px) scale(.98)}}
+dialog.case::backdrop{background:rgba(28,26,23,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.case-art{position:relative;min-height:460px}
+.case-art .canvas{position:absolute;inset:0;aspect-ratio:auto;box-shadow:none;transform:none!important}
+.case-body{padding:60px 48px 40px;display:flex;flex-direction:column}
+.case-meta{font-size:12px;letter-spacing:.4em;color:var(--vermilion)}
+.case-body h3{font-size:clamp(30px,3.2vw,46px);font-weight:900;line-height:1.2;margin:10px 0 4px}
+.case-en{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--ink-soft);margin-bottom:22px}
+.case-desc{font-size:16px;text-align:justify}
+.case-info{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:26px 0 20px;padding:20px 0;border-block:1px solid rgba(28,26,23,.2);font-size:14px}
+.case-info dt{color:var(--ink-soft);letter-spacing:.2em}
+.case-info dd{font-family:var(--mono);font-size:13px;word-break:break-all}
+.langbar{display:flex;height:8px;border-radius:999px;overflow:hidden;margin:4px 0 10px;background:rgba(28,26,23,.1)}
+.langbar i{display:block;height:100%}
+.lang-legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--ink-soft);margin-bottom:24px}
+.lang-legend span::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:6px}
+.case-hl{list-style:none;margin:0 0 28px}
+.case-hl li{padding:9px 0 9px 1.6em;border-bottom:1px dashed rgba(28,26,23,.2);font-size:15px;position:relative}
+.case-hl li::before{content:'—';position:absolute;left:0;color:var(--vermilion)}
+.gh{align-self:flex-start;display:inline-flex;gap:.6em;align-items:center;background:var(--ink);color:var(--paper);padding:12px 22px;font-size:14px;letter-spacing:.15em;margin-bottom:28px;transition:background .3s}
+.gh:hover{background:var(--vermilion)}
+.case-nav{margin-top:auto;display:flex;justify-content:space-between;gap:12px}
+.case-nav button{font:inherit;background:none;border:0;border-bottom:1px solid var(--ink);cursor:pointer;color:var(--ink);font-size:14px;letter-spacing:.2em;padding-bottom:4px}
+.case-nav button:hover{color:var(--vermilion);border-color:var(--vermilion)}
+.close{position:absolute;top:18px;right:20px;width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;z-index:3;transition:transform .4s var(--ease)}
+.close:hover{transform:rotate(90deg)}
+
+.repo-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.repo-tools input,.repo-tools select{font:inherit;font-size:14px;padding:8px 18px;border:1px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);outline:none}
+.repo-tools input{width:200px}
+.repo-tools input:focus,.repo-tools select:focus{border-color:var(--vermilion)}
+.lang-sum{max-width:1400px;margin:0 auto 6vh}
+.langbar.big{height:14px}
+.repo-list{list-style:none;max-width:1400px;margin:0 auto;border-top:1px solid var(--ink)}
+.repo-list a{display:grid;grid-template-columns:1.4fr 2.4fr 1.5fr 40px;gap:2vw;padding:24px 2vw;border-bottom:1px solid rgba(28,26,23,.25);align-items:baseline;transition:background .4s,color .4s}
+.repo-list a:hover{background:var(--ink);color:var(--paper)}
+.rn{font-family:var(--mono);font-size:16px;font-weight:700;word-break:break-all}
+.rn em{font-style:normal;font-family:var(--serif);font-weight:400;font-size:11px;letter-spacing:.2em;border:1px solid currentColor;border-radius:999px;padding:1px 8px;margin-left:8px;opacity:.7;vertical-align:middle}
+.rd{font-size:15px;opacity:.85}
+.rm{font-size:13px;opacity:.65;font-family:var(--mono)}
+.rm i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;background:var(--c)}
+.ra{font-size:20px;text-align:right;transition:transform .4s var(--ease)}
+.repo-list a:hover .ra{transform:translate(4px,-4px);color:var(--ochre)}
+.repo-empty{padding:30px 2vw;color:var(--ink-soft)}
+.sync{max-width:1400px;margin:18px auto 0;font-size:12px;letter-spacing:.2em;color:var(--ink-soft)}
+.sync.live::before{content:'● ';color:#5f8a4f}
+.demos{max-width:1400px;margin:12vh auto 0}
+.demos ul{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.demos a{display:block;border:1px solid var(--ink);padding:22px 18px;transition:background .3s,color .3s,border-color .3s}
+.demos a:hover{background:var(--vermilion);color:var(--paper);border-color:var(--vermilion)}
+.demos b{display:block;font-family:var(--latin);font-style:italic;font-weight:400;font-size:34px;line-height:1.1}
+.demos span{font-size:14px}
+.portrait .avatar{left:24%;width:52%;top:20%;aspect-ratio:1;border-radius:50%;object-fit:cover;filter:grayscale(1) sepia(.35) contrast(1.05);mix-blend-mode:multiply;z-index:2}
+.js .reveal{opacity:0;transform:translateY(48px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  section{padding:12vh 6vw}
+  .hero-foot,.about,.services,.process,.contact-grid{grid-template-columns:1fr}
+  .grid .work{grid-column:1/-1!important;margin-top:0!important}
+  .vertical,.nav .links{display:none}
+  .process::before{display:none}
+  .timeline li{grid-template-columns:1fr;gap:4px}
+  .repo-list a{grid-template-columns:1fr 24px;gap:6px 12px}
+  .repo-list .rd,.repo-list .rm{grid-column:1}
+  .repo-list .ra{grid-row:1;grid-column:2}
+  .demos ul{grid-template-columns:repeat(2,1fr)}
+  .repo-tools input{width:100%}
+  dialog.case[open]{grid-template-columns:1fr}
+  .case-art{min-height:280px}
+  .case-body{padding:36px 24px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none}}
+</style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="text-center">
-      <img src="https://avatars.githubusercontent.com/u/184716029?s=400&u=a1b7aa8d640cbfc06af9854ed591f1e29b111754&v=4"
-           alt="avatar" class="avatar">
-      <h1>刘一帆</h1>
-      <p>欢迎来到我的个人主页！</p>
-      <div class="social-icons">
-        <a href="mailto:liu_yifan66@126.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/YiFanAWA" title="GitHub"><i class="fab fa-github"></i></a>
-        <!-- 可以继续加微信、知乎、CSDN等 -->
-      </div>
+<div class='cursor' hidden></div>
+
+<header class='nav'>
+  <a class='mark' href='#top'>Yifan Liu</a>
+  <nav class='links'><a href='#works'>项目</a><a href='#repos'>仓库</a><a href='#about'>关于</a><a href='#activity'>动态</a><a href='#contact'>联系</a></nav>
+</header>
+
+<section class='hero' id='top'>
+  <div class='blob b1'></div><div class='blob b2'></div><div class='blob b3'></div>
+  <div class='vertical v-left'>让模型成为可以被检查的工具</div>
+  <div class='vertical v-right'>个人主页 · 二〇二六</div>
+  <div class='hero-inner'>
+    <p class='eyebrow'>GITHUB · @YiFanAWA · SINCE <span data-k='since'>2024</span></p>
+    <h1 class='hero-name'><span class='l1'>Yifan</span><span class='l2'>Liu<em>.</em></span></h1>
+    <div class='hero-foot'>
+      <p class='role'>刘一帆<br><span>浙江中医药大学 · 数据科学与大数据技术</span></p>
+      <p class='intro'>AI 应用与全栈开发。我写的东西，大多在做同一件事：把大模型接进真实的流程里，让它留下证据、接受检查，然后才交付。</p>
+      <div class='now'><b>GITHUB</b><span data-k='repos'>13</span> 个公开仓库 · <span data-k='followers'>1</span> 位关注者<br>最近更新：<a id='latest' href='https://github.com/YiFanAWA/ai-memory-bridge' target='_blank' rel='noopener'>ai-memory-bridge</a></div>
     </div>
-    <hr>
-    <h2>关于我</h2>
-    <p>目前就读于浙江中医药大学，研究方向为XXX，兴趣包括编程、游戏和旅行。</p>
-    <h2>项目与成果</h2>
+  </div>
+</section>
+
+<div class='strip' aria-hidden='true'><div>AI Agent<span>智能体</span>MCP<span>协议</span>LLM Workflow<span>工作流</span>Full-stack<span>全栈</span>Spring Cloud<span>微服务</span>NLP<span>语言</span>Knowledge Graph<span>图谱</span>AI Agent<span>智能体</span>MCP<span>协议</span>LLM Workflow<span>工作流</span>Full-stack<span>全栈</span>Spring Cloud<span>微服务</span>NLP<span>语言</span>Knowledge Graph<span>图谱</span></div></div>
+
+<section id='works'>
+  <div class='sec-head reveal'>
+    <span class='sec-no'>01</span>
+    <h2>精选项目<i>Selected Projects · 9 works, 2025 — 2026</i></h2>
+    <div class='chips' role='group' aria-label='按类别筛选'>
+      <button class='chip' data-f='all' aria-pressed='true'>全部</button>
+      <button class='chip' data-f='ai' aria-pressed='false'>AI / Agent</button>
+      <button class='chip' data-f='web' aria-pressed='false'>全栈</button>
+      <button class='chip' data-f='backend' aria-pressed='false'>后端</button>
+      <button class='chip' data-f='nlp' aria-pressed='false'>NLP 研究</button>
+    </div>
+  </div>
+  <div class='grid'>
+    <article class='work tall reveal' data-id='sliver' data-cat='ai backend web' tabindex='0' role='button' aria-label='查看项目：Sliver Code'>
+      <div class='canvas a7'><i class='ln lv'></i><i class='ln lh'></i><i class='core'></i><i class='n n1'></i><i class='n n2'></i><i class='n n3'></i><i class='n n4'></i><span class='repo-tag'>私有仓库 · 暂未公开</span><span class='view'>查看<br>项目</span></div>
+      <div class='caption'><div><h3>Sliver Code<i>AI Agent Workbench</i></h3><small>Java · Spring Cloud · Vue 3</small></div><span class='no'>01</span></div>
+    </article>
+    <article class='work wide offset reveal' data-id='yuanzhi' data-cat='ai web nlp' tabindex='0' role='button' aria-label='查看项目：远志 AI Scientist'>
+      <div class='canvas a8'><i class='sn'></i><i class='stem'></i><i class='lf l1'></i><i class='lf l2'></i><i class='lf l3'></i><i class='fl'></i><i class='gd'></i><span class='repo-tag'>langewu9/tcm-mechanism · 合作开发</span><span class='view'>查看<br>项目</span></div>
+      <div class='caption'><div><h3>远志 AI Scientist<i>TCM Research Agent</i></h3><small>Python · Django · React · R</small></div><span class='no'>02</span></div>
+    </article>
+    <article class='work  reveal' data-id='memory' data-cat='ai' tabindex='0' role='button' aria-label='查看项目：AI Memory Bridge'>
+      <div class='canvas a1'><i class='base'></i><span class='repo-tag'>YiFanAWA/ai-memory-bridge</span><span class='view'>查看<br>项目</span></div>
+      <div class='caption'><div><h3>AI Memory Bridge<i>Obsidian × MCP</i></h3><small>TypeScript · 插件 + MCP Server</small></div><span class='no'>03</span></div>
+    </article>
+    <article class='work offset reveal' data-id='lab' data-cat='ai web' tabindex='0' role='button' aria-label='查看项目：实验报告助手'>
+      <div class='canvas a3'><i class='wall'></i><i class='shadow'></i><i class='arch'></i><i class='orb'></i><i class='half'></i><i class='shelf'></i><span class='repo-tag'>YiFanAWA/lab-report-assistant</span><span class='view'>查看<br>项目</span></div>
+      <div class='caption'><div><h3>实验报告助手<i>Lab Report</i></h3><small>Python · TypeScript · LLM</small></div><span class='no'>04</span></div>
+    </article>
+    <article class='work  reveal' data-id='material' data-cat='ai web' tabindex='0' role='button' aria-label='查看项目：MaterialSearch 本地复刻'>
+      <div class='canvas a9'><i class='film'></i><i class='lens'></i><i class='hd'></i><span class='repo-tag'>私有仓库 · 暂未公开</span><span class='view'>查看<br>项目</span></div>
+      <div class='caption'><div><h3>MaterialSearch<i>Local CLIP Search</i></h3><small>Python · Chinese-CLIP</small></div><span class='no'>05</span></div>
+    </article>
+    <article class='work wide reveal' data-id='resume' data-cat='web backend' tabindex='0' role='button' aria-label='查看项目：Resume Generator'>
+      <div class='canvas a2'><span class='repo-tag'>YiFanAWA/resume_generator</span><span class='view'>查看<br>项目</span></div>
+      <div class='caption'><div><h3>在线简历生成<i>Resume Generator</i></h3><small>React · Spring Boot 3 · MySQL</small></div><span class='no'>06</span></div>
+    </article>
+    <article class='work tall offset reveal' data-id='fta' data-cat='ai' tabindex='0' role='button' aria-label='查看项目：FTA 故障树系统'>
+      <div class='canvas a4'><span class='repo-tag'>YiFanAWA/Fta_system</span><span class='view'>查看<br>项目</span></div>
+      <div class='caption'><div><h3>故障树生成系统<i>FTA System</i></h3><small>Python · LLM · 知识图谱</small></div><span class='no'>07</span></div>
+    </article>
+    <article class='work tall reveal' data-id='nlp' data-cat='ai nlp' tabindex='0' role='button' aria-label='查看项目：中医文本实体关系抽取'>
+      <div class='canvas a5'><i class='moon'></i><i class='trail'></i><i class='sea'></i><span class='repo-tag'>YiFanAWA/NLP</span><span class='view'>查看<br>项目</span></div>
+      <div class='caption'><div><h3>中医文本关系抽取<i>TCM-ERE</i></h3><small>Python · PyTorch · NLP</small></div><span class='no'>08</span></div>
+    </article>
+    <article class='work wide offset reveal' data-id='mall' data-cat='backend' tabindex='0' role='button' aria-label='查看项目：SpringCloud 微服务商城'>
+      <div class='canvas a6'><i class='s s1'></i><i class='s s2'></i><i class='s s3'></i><i class='s s4'></i><span class='repo-tag'>YiFanAWA/springcloud_mall</span><span class='view'>查看<br>项目</span></div>
+      <div class='caption'><div><h3>微服务商城<i>SpringCloud Mall</i></h3><small>Java · Spring Cloud · Docker</small></div><span class='no'>09</span></div>
+    </article>
+  </div>
+</section>
+
+<section id='repos' style='padding-top:6vh'>
+  <div class='sec-head reveal'>
+    <span class='sec-no'>02</span>
+    <h2>全部仓库<i>All Repositories · live from GitHub</i></h2>
+    <div class='repo-tools'>
+      <input id='q' type='search' placeholder='搜索仓库…' aria-label='搜索仓库'>
+      <div class='chips' id='rf' role='group' aria-label='仓库类型'>
+        <button class='chip' data-r='own' aria-pressed='true'>原创</button>
+        <button class='chip' data-r='fork' aria-pressed='false'>Fork</button>
+        <button class='chip' data-r='all' aria-pressed='false'>全部</button>
+      </div>
+      <select id='sort' aria-label='排序'><option value='updated'>最近更新</option><option value='stars'>Star 数</option><option value='name'>名称</option></select>
+    </div>
+  </div>
+  <div class='lang-sum reveal'><p class='label'>主要语言 · 按原创仓库统计</p><div class='langbar big' id='langAll'></div><div class='lang-legend' id='langAllLeg'></div></div>
+  <ul class='repo-list' id='repoList'></ul>
+  <p class='sync' id='sync'>正在连接 GitHub…（当前显示 2026-11-25 的数据快照）</p>
+  <div class='demos reveal'>
+    <p class='label'>在线演示 · GitHub Pages · WebGL 图形学实验</p>
     <ul>
-      <li><a href="https://github.com/YiFanAWA/Project1">项目名称1</a>：项目简介...</li>
-      <li><a href="https://github.com/YiFanAWA/Project2">项目名称2</a>：项目简介...</li>
-      <li><a href="chap-02/demos/chap2-demo-2(问题一).html">HTML 页面1</a></li>
-      <li><a href="chap-02/demos/chap2-demo-4(问题二).html">HTML 页面2</a></li>
-      <li><a href="chap-02/demos/chap2-demo-5(问题三).html">HTML 页面3</a></li>
-      <li><a href="chap-02/js/script.js" download>下载 JavaScript 文件</a></li>
+      <li><a href='chap-02/demos/chap2-demo-1.html' target='_blank' rel='noopener'><b>i.</b><span>第 2 章 · Demo 1</span></a></li>
+      <li><a href='chap-02/demos/chap2-demo-2(问题一).html' target='_blank' rel='noopener'><b>ii.</b><span>第 2 章 · 问题一</span></a></li>
+      <li><a href='chap-02/demos/chap2-demo-3.html' target='_blank' rel='noopener'><b>iii.</b><span>第 2 章 · Demo 3</span></a></li>
+      <li><a href='chap-02/demos/chap2-demo-4(问题二).html' target='_blank' rel='noopener'><b>iv.</b><span>第 2 章 · 问题二</span></a></li>
+      <li><a href='chap-02/demos/chap2-demo-5(问题三).html' target='_blank' rel='noopener'><b>v.</b><span>第 2 章 · 问题三</span></a></li>
     </ul>
-    <h2>联系我</h2>
-    <p>邮箱：liu_yifan66@126.com</p>
-    <!-- 可扩展更多内容 -->
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-<div id="ai-assistant" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-  <div id="chat-window" style="display: none; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); padding: 15px;">
-    <div id="chat-header" style="font-weight: bold; margin-bottom: 10px;">AI助手</div>
-    <div id="chat-messages" style="height: 320px; overflow-y: auto; margin-bottom: 10px;"></div>
-    <input type="text" id="user-input" placeholder="输入您的问题..." style="width: 100%; padding: 5px;">
+</section>
+
+<section id='about'>
+  <div class='sec-head reveal'><span class='sec-no'>03</span><h2>关于我<i>About</i></h2></div>
+  <div class='about'>
+    <div class='reveal'>
+      <div class='canvas portrait'><i class='arch'></i><i class='sun'></i><i class='shade'></i><i class='torso'></i><i class='head'></i><img class='avatar' src='https://avatars.githubusercontent.com/u/184716029?v=4' alt='刘一帆的 GitHub 头像' onerror='this.remove()'></div>
+      <p class='portrait-cap'>GitHub 头像 · @YiFanAWA</p>
+    </div>
+    <div class='about-text reveal'>
+      <p class='lead'>数据科学专业的学生，<br>喜欢把大模型接进真实的流程里。</p>
+      <p>我是刘一帆（Yifan Liu），就读于浙江中医药大学数据科学与大数据技术专业，GitHub 上是 <code>@YiFanAWA</code>。我主要用 Java、Python 和 TypeScript 写项目：用 Spring Cloud 搭 AI 智能体协作平台，参与中医药理研究平台“远志”的开发，给 AI 编程助手做记忆插件，用 LLM 搭实验报告与故障树分析的工作流，也做多模态素材检索和中医文本的 NLP 研究。</p>
+      <p>比起“模型能生成什么”，我更在意生成的东西能不能被检查、被追溯、被放心地交出去。</p>
+      <div class='stats'>
+        <div><b data-k='repos'>13</b><span>公开仓库</span></div>
+        <div><b data-k='followers'>1</b><span>关注者</span></div>
+        <div><b data-k='since'>2024</b><span>加入 GitHub</span></div>
+      </div>
+      <div class='tools'><p class='label'>技术栈</p><ul><li>Python</li><li>Java</li><li>TypeScript</li><li>React / Vite</li><li>Spring Boot</li><li>Spring Cloud</li><li>MySQL · Redis</li><li>Docker</li><li>PyTorch</li><li>MCP</li><li>LLM API</li><li>WebGL</li></ul></div>
+    </div>
   </div>
-  <button id="toggle-chat" style="background: #25c6db; color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 24px; cursor: pointer;">
-    💬
-  </button>
-</div>
+</section>
+
+<section id='focus' style='padding-top:6vh'>
+  <div class='sec-head reveal'><span class='sec-no'>04</span><h2>我在做的方向<i>Focus</i></h2></div>
+  <div class='services'>
+    <div class='svc reveal'><span>i.</span><h3>Agent 与 MCP 工具</h3><p>给 AI 编程助手扩展能力，比如让 Claude Code 读写 Obsidian 里的长期记忆。</p><ul><li>MCP Server</li><li>Obsidian 插件</li><li>本地检索</li></ul></div>
+    <div class='svc reveal'><span>ii.</span><h3>LLM 工作流</h3><p>把大模型接进具体流程，每一步都有状态、证据和人工确认。</p><ul><li>LLM Gateway / SSE</li><li>受控代码执行</li><li>Word / PDF / PPT 生成</li></ul></div>
+    <div class='svc reveal'><span>iii.</span><h3>全栈与后端</h3><p>从前端页面到认证、数据库、缓存、部署与压测，一条链路做完。</p><ul><li>React / Vite</li><li>Spring Boot / Cloud</li><li>Docker · CI · k6</li></ul></div>
+    <div class='svc reveal'><span>iv.</span><h3>NLP 与知识图谱</h3><p>面向中医、工程手册等领域文本，做抽取、预训练与推理。</p><ul><li>实体关系联合抽取</li><li>领域二次预训练</li><li>图谱构建与推理</li></ul></div>
+  </div>
+  <p class='label process-title reveal'>工作方式 · PROCESS</p>
+  <div class='process'>
+    <div class='step reveal'><b>01</b><h4>拆解</h4><p>把需求拆成可检查的中间产物。</p></div>
+    <div class='step reveal'><b>02</b><h4>原型</h4><p>先跑通最小的一条链路。</p></div>
+    <div class='step reveal'><b>03</b><h4>验证</h4><p>测试、回归检查与压测。</p></div>
+    <div class='step reveal'><b>04</b><h4>交付</h4><p>文档、Docker 与可复现环境。</p></div>
+  </div>
+</section>
+
+<section id='activity' style='padding-top:6vh'>
+  <div class='sec-head reveal'><span class='sec-no'>05</span><h2>最近动态<i>Recent Activity · live from GitHub</i></h2></div>
+  <ol class='timeline' id='feed'>
+    <li class='reveal'><span class='yr'>2026 · 11</span><span class='role-t'><a href='https://github.com/langewu9/tcm-mechanism' target='_blank' rel='noopener'>远志 AI Scientist</a></span><span class='lang-t'>Python · TS</span><span class='note'>中医药理研究平台，与 langewu9 合作开发</span></li>
+    <li class='reveal'><span class='yr'>2026 · 11</span><span class='role-t'>MaterialSearch</span><span class='lang-t'>Python</span><span class='note'>本机 Chinese-CLIP 素材语义搜索（私有）</span></li>
+    <li class='reveal'><span class='yr'>2026 · 10</span><span class='role-t'><a href='https://github.com/YiFanAWA/ai-memory-bridge' target='_blank' rel='noopener'>AI Memory Bridge</a></span><span class='lang-t'>TypeScript</span><span class='note'>Obsidian 插件 + MCP Server</span></li>
+    <li class='reveal'><span class='yr'>2026 · 10</span><span class='role-t'><a href='https://github.com/YiFanAWA/springcloud_mall' target='_blank' rel='noopener'>SpringCloud Mall</a></span><span class='lang-t'>Java</span><span class='note'>基于 mall-swarm 的微服务商城实践</span></li>
+    <li class='reveal'><span class='yr'>2026 · 09</span><span class='role-t'><a href='https://github.com/YiFanAWA/Fta_system' target='_blank' rel='noopener'>FTA System</a></span><span class='lang-t'>Python</span><span class='note'>LLM + 知识图谱生成故障树</span></li>
+    <li class='reveal'><span class='yr'>2026 · 08</span><span class='role-t'><a href='https://github.com/YiFanAWA/lab-report-assistant' target='_blank' rel='noopener'>实验报告助手</a></span><span class='lang-t'>Python · TS</span><span class='note'>可追溯证据链的实验报告工作台</span></li>
+    <li class='reveal'><span class='yr'>2026 · 08</span><span class='role-t'>Sliver Code</span><span class='lang-t'>Java · Vue</span><span class='note'>Spring Cloud AI 智能体协作平台（私有）</span></li>
+    <li class='reveal'><span class='yr'>2026 · 06</span><span class='role-t'><a href='https://github.com/YiFanAWA/resume_generator' target='_blank' rel='noopener'>Resume Generator</a></span><span class='lang-t'>Java · JS</span><span class='note'>前后端分离的在线简历系统</span></li>
+    <li class='reveal'><span class='yr'>2025 · 12</span><span class='role-t'><a href='https://github.com/YiFanAWA/NLP' target='_blank' rel='noopener'>TCM-ERE</a></span><span class='lang-t'>Python</span><span class='note'>文档级中医文本实体关系联合抽取</span></li>
+  </ol>
+  <p class='sync' id='feedSync'>项目更新记录 · 数据快照</p>
+</section>
+
+<section class='quote'>
+  <div class='ring r1'></div><div class='ring r2'></div><div class='ring r3'></div>
+  <blockquote>模型只负责给出可以校验的候选，<br><em>决定，留给看得见证据的人。</em></blockquote>
+  <cite>— 我的工程信条</cite>
+  <div class='clients' aria-label='常用技术'><span class='c1'>Python</span><span class='c2'>Java</span><span class='c3'>TypeScript</span><span class='c4'>SPRING</span><span class='c1'>React</span><span class='c2'>PyTorch</span><span class='c3'>MCP</span><span class='c4'>DOCKER</span></div>
+</section>
+
+<section id='contact' class='contact'>
+  <div class='blob c-b1'></div><div class='blob c-b2'></div>
+  <p class='sec-no'>06 · 联系</p>
+  <h2 class='contact-title'>有一个想法？<br><em>我们聊聊。</em></h2>
+  <a class='mail' href='mailto:liu_yifan66@126.com'>liu_yifan66@126.com<span>→</span></a>
+  <div class='contact-grid'>
+    <div><p class='label'>代码</p><ul class='social'><li><a href='https://github.com/YiFanAWA' target='_blank' rel='noopener'>GitHub @YiFanAWA</a></li><li><a href='https://github.com/YiFanAWA?tab=repositories' target='_blank' rel='noopener'>全部仓库</a></li><li><a href='https://github.com/langewu9/tcm-mechanism' target='_blank' rel='noopener'>远志 AI Scientist</a></li></ul></div>
+    <div><p class='label'>所在</p><p>中国 · 可远程协作<br>当地时间 <span id='clock'>--:--</span></p></div>
+    <div><p class='label'>欢迎交流</p><p>AI 工具、LLM 工作流<br>全栈与后端项目</p></div>
+  </div>
+</section>
+
+<footer>
+  <span class='latin'>Yifan Liu © <span id='year'>2026</span></span>
+  <span>数据来自 GitHub 公开 API · 画面由 HTML 与 CSS 绘制</span>
+  <span><a href='https://github.com/YiFanAWA' target='_blank' rel='noopener'>GitHub</a><a href='old-home.html'>旧版主页</a><a href='exhibition.html'>《浮光》视觉实验</a><a href='#top'>回到顶部 ↑</a></span>
+</footer>
+
+<dialog class='case' aria-labelledby='case-title'>
+  <button class='close' aria-label='关闭'>×</button>
+  <div class='case-art'></div>
+  <div class='case-body'>
+    <p class='case-meta'></p>
+    <h3 id='case-title'></h3>
+    <p class='case-en'></p>
+    <p class='case-desc'></p>
+    <dl class='case-info'></dl>
+    <p class='label'>语言构成</p>
+    <div class='langbar'></div>
+    <div class='lang-legend'></div>
+    <p class='label'>亮点</p>
+    <ul class='case-hl'></ul>
+    <a class='gh' target='_blank' rel='noopener'>在 GitHub 查看 <span>↗</span></a>
+    <div class='case-nav'><button class='prev'>← 上一个</button><button class='next'>下一个 →</button></div>
+  </div>
+</dialog>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const toggleBtn = document.getElementById('toggle-chat');
-    const chatWindow = document.getElementById('chat-window');
-    const userInput = document.getElementById('user-input');
-    const chatMessages = document.getElementById('chat-messages');
-    
-    // 切换聊天窗口显示
-    toggleBtn.addEventListener('click', function() {
-      chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
-    });
-    
-    // 简单的预设回答
-    const responses = {
-      '你好': '您好！我是您的AI助手，有什么可以帮助您的吗？',
-      '你是谁': '我是这个网站的AI助手，可以回答您的问题。',
-      '联系方式': '您可以通过邮件 liu_yifan66@126.com 联系站长。',
-      '默认': '抱歉，我不太明白您的意思。您可以问一些关于这个网站或站长的问题。'
-    };
-    
-    // 处理用户输入
-    userInput.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        const message = userInput.value.trim();
-        if (message) {
-          // 显示用户消息
-          addMessage(message, 'user');
-          
-          // 生成AI回复
-          setTimeout(() => {
-            const reply = getReply(message);
-            addMessage(reply, 'ai');
-          }, 500);
-          
-          userInput.value = '';
-        }
-      }
-    });
-    
-    // 添加消息到聊天窗口
-    function addMessage(text, sender) {
-      const messageDiv = document.createElement('div');
-      messageDiv.style.marginBottom = '10px';
-      messageDiv.style.padding = '5px';
-      messageDiv.style.borderRadius = '5px';
-      
-      if (sender === 'user') {
-        messageDiv.style.background = '#e3f2fd';
-        messageDiv.style.textAlign = 'right';
-        messageDiv.textContent = '您: ' + text;
-      } else {
-        messageDiv.style.background = '#f5f5f5';
-        messageDiv.textContent = '助手: ' + text;
-      }
-      
-      chatMessages.appendChild(messageDiv);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-    
-    // 获取回复
-    function getReply(message) {
-      const lowerMsg = message.toLowerCase();
-      for (const [key, value] of Object.entries(responses)) {
-        if (lowerMsg.includes(key.toLowerCase())) {
-          return value;
-        }
-      }
-      return responses['默认'];
-    }
-    
-    // 初始化欢迎消息
-    setTimeout(() => {
-      addMessage('您好！欢迎访问本网站。我是AI助手，可以回答您的问题。', 'ai');
-    }, 1000);
+const GH='https://github.com/YiFanAWA/';
+const P={
+  sliver:{repo:'sliver-code',priv:true,where:'私有仓库（暂未公开）',role:'独立开发 · 178 次提交',t:'Sliver Code',e:'AI 开发任务工作台',c:'AI Agent · 微服务',u:'2026-06 → 2026-08',st:'Java 17 · Spring Boot 3 · Spring Cloud · Vue 3',
+    d:'一个让开发者管理、编排多个 AI 智能体协作完成开发任务的 Web 控制台。基于 Spring Cloud 微服务架构，核心是 Agent-Brain：一套包含三层记忆模型、上下文规则引擎和不可绕过的“宪法”安全层的智能体大脑。',
+    h:['Agent-Brain：短期 / 工作 / 长期三层记忆，多路召回 + LLM 重排','安全宪法：5 个 ConstitutionPolicy，fail-closed 语义与审计日志','任务状态机 + Outbox 模式 + RocketMQ，WebSocket STOMP 实时推送','Nacos + Gateway + OpenFeign，JWT 跨 HTTP / WS 复用，资源级授权防 IDOR','Vue 3 + Element Plus 前端，Docker Compose 一键启动'],
+    l:{Java:1360926,PowerShell:347006,TypeScript:190515,Vue:127330,SQL:71680,CSS:6983,Shell:4497}},
+  yuanzhi:{repo:'tcm-mechanism',url:'https://github.com/langewu9/tcm-mechanism',where:'github.com/langewu9/tcm-mechanism',role:'合作开发 · 126 / 351 次提交',t:'远志 AI Scientist',e:'TCM Case & Mechanism Research Agent',c:'AI · 中医药研究',u:'2026-11',st:'Python · Django REST · React / Vite · R · Docker',
+    d:'中医药理研究平台：一个基于检索增强（RAG）的对话智能体，用于中医医案与作用机制分析。前端 React / Vite，后端 Django REST API，配合 R 绘图服务和 Docker 数据库 / 任务服务。',
+    h:['检索增强对话智能体，支持医案与机制分析','Django REST Framework API、管理后台、知识目录与组学任务','Redis + Celery 异步执行分析任务','R 绘图服务渲染科研图表','Docker Compose、Nginx 生产部署与备份恢复'],
+    l:{Python:2519436,TypeScript:638285,JavaScript:343388,CSS:166874,R:51816,PowerShell:13375,HTML:7030,Dockerfile:3400}},
+  material:{repo:'materialsearch-local',priv:true,where:'私有仓库（暂未公开）',role:'独立开发 · 62 次提交',t:'MaterialSearch 本地复刻',e:'Local Semantic Media Search',c:'AI · 多模态检索',u:'2026-10 → 2026-11',st:'Python · Chinese-CLIP · JavaScript',
+    d:'基于原版前端和公开的 materialsearch-core，在本机运行 Chinese-CLIP，对图片和视频素材做语义搜索。服务层为重新编写的可读代码，不包含原作者的加密模块。',
+    h:['本机运行 Chinese-CLIP，对图片与视频素材做语义检索','可选 OCR 屏幕文字索引，字幕与画面联合搜索','片段清单与批量导出','与官方发行包逐项对照验证，附基准与质量记录','可选 Intel 核显加速；只监听本机并补齐安全响应头'],
+    l:{JavaScript:1862002,Python:644864,CSS:390517,HTML:136203,TypeScript:36490,Shell:2443}},
+  memory:{repo:'ai-memory-bridge',t:'AI Memory Bridge',e:'Obsidian 插件 + MCP Server',c:'AI 工具',u:'2026-10',st:'TypeScript · Node.js · MCP · Obsidian API',
+    d:'把 Obsidian vault 变成 Claude Code 的长期记忆库。在 Obsidian 侧栏打开 AI 记忆面板，把笔记拖进去，Claude Code 就能通过 MCP 工具读写这些记忆。',
+    h:['可视化拖拽面板，想让 AI 记住什么就拖什么','双向读写：Claude 写回的内容隔离在 AI记忆/ 文件夹','只有 5 个 MCP 工具，5 分钟上手','TF-IDF 纯 JS 实现搜索，不需要下载模型','路径拦截、大小限制与删除确认'],
+    l:{TypeScript:60751,JavaScript:30705,Shell:7266,CSS:6251}},
+  lab:{repo:'lab-report-assistant',t:'实验报告助手',e:'Lab Report Assistant',c:'AI 工作流 · 全栈',u:'2026-08',st:'Python · TypeScript · LLM Gateway · Docker',
+    d:'一个本地单用户 Web 工作台，把实验要求、公开资料、数据分析、代码执行、图表和最终交付物串成一条可追溯的证据链。它不让模型直接代写报告，而是把报告拆成可检查、可确认、可复用的中间产物。',
+    h:['任务单、证据卡片、数据集版本与分析方案逐步确认','LLM Gateway + SSE 流式生成候选，在受控 Python 环境中执行','由同一份已确认大纲生成 Word / PDF / PPT','交付物审阅台：版本、追溯关系与下载','Docker Compose 与 Windows x64 便携包'],
+    l:{Python:2378658,TypeScript:728811,HTML:274834,CSS:41844,PowerShell:7029,Dockerfile:2558,Shell:356}},
+  resume:{repo:'resume_generator',t:'在线简历生成系统',e:'Resume Generator',c:'全栈 Web',u:'2026-06',st:'React / Vite · Spring Boot 3 · MySQL · Redis',
+    d:'前后端分离的在线简历生成系统：在线编辑简历、导出 PDF，并通过带保护的公开链接分享。',
+    h:['Spring Security Session / Cookie + CSRF 认证','MySQL 8 + Flyway 管理 schema','Thymeleaf + OpenHTMLToPDF 导出 PDF','分享链接支持密码、过期时间、访问次数限制与统计','Caffeine / Redis 可切换缓存；Docker Compose、GitHub Actions、k6 压测基线'],
+    l:{Java:99363,JavaScript:51619,HTML:50859,CSS:33831,Dockerfile:854}},
+  fta:{repo:'Fta_system',t:'故障树生成系统',e:'FTA System',c:'AI · 知识图谱',u:'2026-09',st:'Python · LLM · 知识图谱 · 向量检索',
+    d:'面向故障树分析（FTA）的 Python 系统：从手册等文本中抽取知识，结合 LLM 流水线与知识图谱推理生成故障树，并导出为可视化和结构化格式。',
+    h:['LLM 流水线与 Agent 工作流生成故障树','知识图谱构建与推理','向量库检索与文件文本抽取','导出 DOT / XML 并可视化','API 服务与 Docker 部署文档'],
+    l:{Python:213982,PowerShell:1341}},
+  nlp:{repo:'NLP',t:'中医文本实体关系联合抽取',e:'TCM Joint Entity-Relation Extraction',c:'NLP 研究',u:'2025-12',st:'Python · PyTorch · DGL · RoBERTa',
+    d:'面向文档级中医药文本的实体与关系联合抽取方法，附带在中医领域二次预训练的语言模型 TCMroberta。',
+    h:['文档级实体关系联合抽取','中医领域二次预训练语言模型 TCMroberta','提供 CPU、CUDA 11.7 与 CUDA 13.0 安装方案','trainer.py 一条命令训练基础模型'],
+    l:{Python:122287}},
+  mall:{repo:'springcloud_mall',role:'基于开源 mall-swarm 的实践',t:'SpringCloud 微服务商城',e:'SpringCloud Mall',c:'后端 · 微服务',u:'2026-10',st:'Java · Spring Cloud · Docker',
+    d:'基于微服务框架搭建的电商项目，以开源项目 mall-swarm 为基础，用于实践后台管理与商城业务的微服务拆分和部署。',
+    h:['基于 mall-swarm 的 Spring Cloud 微服务架构','后台管理与前台商城业务模块','Docker 化部署脚本'],
+    l:{Java:2815279,HTML:66681,PowerShell:12483,Shell:7124,Dockerfile:369}}
+};
+const LC={Python:'#1f2d4a',Java:'#c4421f',TypeScript:'#8a9a7b',JavaScript:'#d89a3c',HTML:'#b06a4f',CSS:'#6a6359',Shell:'#a99d8a',PowerShell:'#c9bda8',Dockerfile:'#3a4d75',Vue:'#5f8a4f',SQL:'#8a7a62',R:'#3a6b8a',Batchfile:'#d3c2a4'};
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const works=$$('.work'), grid=$('.grid'), dlg=$('dialog.case');
+let current=null;
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.reveal').forEach(el=>io.observe(el));
+
+$$('#works .chip').forEach(chip=>chip.addEventListener('click',()=>{
+  const f=chip.dataset.f;
+  $$('#works .chip').forEach(x=>x.setAttribute('aria-pressed',String(x===chip)));
+  grid.classList.toggle('filtered',f!=='all');
+  works.forEach(w=>{w.classList.toggle('hide',f!=='all'&&!w.dataset.cat.split(' ').includes(f));w.classList.add('in')});
+}));
+
+function el(tag,text,cls){const n=document.createElement(tag);if(text!=null)n.textContent=text;if(cls)n.className=cls;return n}
+function openCase(w){
+  current=w;
+  const p=P[w.dataset.id];
+  const art=$('.case-art',dlg); art.innerHTML='';
+  const cv=$('.canvas',w).cloneNode(true); $('.view',cv)?.remove(); art.appendChild(cv);
+  $('.case-meta',dlg).textContent=p.c+' · '+p.u;
+  $('#case-title').textContent=p.t;
+  $('.case-en',dlg).textContent=p.e;
+  $('.case-desc',dlg).textContent=p.d;
+  const info=$('.case-info',dlg); info.innerHTML='';
+  [['技术栈',p.st],['仓库',p.where||'github.com/YiFanAWA/'+p.repo],['我的角色',p.role||'独立开发'],['时间',p.u]].forEach(([k,v])=>info.append(el('dt',k),el('dd',v)));
+  const total=Object.values(p.l).reduce((a,b)=>a+b,0);
+  const bar=$('.langbar',dlg), leg=$('.lang-legend',dlg); bar.innerHTML=''; leg.innerHTML='';
+  Object.entries(p.l).forEach(([k,v])=>{
+    const pct=v/total*100, c=LC[k]||'#999';
+    const seg=el('i'); seg.style.width=pct+'%'; seg.style.background=c; seg.title=k; bar.append(seg);
+    if(pct>=1){const s=el('span',k+' '+pct.toFixed(1)+'%'); s.style.setProperty('--c',c); leg.append(s)}
   });
+  const hl=$('.case-hl',dlg); hl.innerHTML=''; p.h.forEach(t=>hl.append(el('li',t)));
+  const g=$('.gh',dlg);
+  if(p.priv){g.removeAttribute('href');g.classList.add('off');g.firstChild.textContent='私有仓库 · 暂未公开 '}
+  else{g.href=p.url||GH+p.repo;g.classList.remove('off');g.firstChild.textContent='在 GitHub 查看 '}
+  if(!dlg.open)dlg.showModal();
+  dlg.scrollTop=0;
+}
+function step(dir){
+  const vis=works.filter(w=>!w.classList.contains('hide'));
+  const i=vis.indexOf(current);
+  openCase(vis[(i+dir+vis.length)%vis.length]);
+}
+works.forEach(w=>{
+  w.addEventListener('click',()=>openCase(w));
+  w.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openCase(w)}});
+});
+$('.close',dlg).addEventListener('click',()=>dlg.close());
+$('.prev',dlg).addEventListener('click',()=>step(-1));
+$('.next',dlg).addEventListener('click',()=>step(1));
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+dlg.addEventListener('keydown',e=>{if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+dlg.addEventListener('close',()=>current&&current.focus());
+
+const USER='YiFanAWA', API='https://api.github.com';
+const SNAP={user:{public_repos:13,followers:1,created_at:'2024-10-12T04:20:21Z',avatar_url:'https://avatars.githubusercontent.com/u/184716029?v=4'},repos:[
+  {name:'rea',language:null,stargazers_count:0,fork:true,updated_at:'2026-10-26',description:'Reverse engineer anything with agents, from app behavior down to native binaries.'},
+  {name:'obsidian-releases',language:null,stargazers_count:1,fork:true,updated_at:'2026-10-05',description:'Community plugins list, theme list, and releases of Obsidian.'},
+  {name:'ai-memory-bridge',language:'TypeScript',stargazers_count:1,fork:false,updated_at:'2026-10-05'},
+  {name:'springcloud_mall',language:'Java',stargazers_count:1,fork:false,updated_at:'2026-10-05'},
+  {name:'Fta_system',language:'Python',stargazers_count:1,fork:false,updated_at:'2026-09-12'},
+  {name:'lab-report-assistant',language:'Python',stargazers_count:1,fork:false,updated_at:'2026-08-26'},
+  {name:'resume_generator',language:'Java',stargazers_count:1,fork:false,updated_at:'2026-06-15'},
+  {name:'CL4R1T4S',language:null,stargazers_count:0,fork:true,updated_at:'2026-06-12',description:'AI systems transparency collection.'},
+  {name:'500-AI-Agents-Projects',language:null,stargazers_count:0,fork:true,updated_at:'2026-04-05',description:'A curated collection of AI agent use cases across industries.'},
+  {name:'NLP',language:'Python',stargazers_count:1,fork:false,updated_at:'2025-12-26'},
+  {name:'YiFanAWA.github.io',language:'JavaScript',stargazers_count:1,fork:false,updated_at:'2025-12-12'},
+  {name:'skills-github-pages',language:null,stargazers_count:0,fork:false,updated_at:'2025-09-19'},
+  {name:'skills-introduction-to-github',language:null,stargazers_count:0,fork:false,updated_at:'2025-02-09'}
+]};
+const DESC={
+  'ai-memory-bridge':'Obsidian 插件 + MCP Server，把 vault 变成 Claude Code 的长期记忆库',
+  'lab-report-assistant':'本地 Web 工作台，把实验报告串成一条可追溯的证据链',
+  'resume_generator':'前后端分离的在线简历系统：编辑、PDF 导出与加密分享',
+  'Fta_system':'LLM + 知识图谱的故障树（FTA）生成系统',
+  'NLP':'文档级中医文本实体关系联合抽取（TCM-ERE）',
+  'springcloud_mall':'基于 mall-swarm 的 Spring Cloud 微服务商城',
+  'YiFanAWA.github.io':'GitHub Pages：WebGL 图形学课程实验',
+  'skills-github-pages':'GitHub Skills 练习仓库',
+  'skills-introduction-to-github':'GitHub Skills 练习仓库'
+};
+const ts=r=>r.pushed_at||r.updated_at||'';
+const fmtDate=s=>String(s).slice(0,10).replace(/-/g,'.');
+const EXTRA=[
+  {name:'tcm-mechanism',language:'Python',stargazers_count:1,fork:false,pushed_at:'2026-11-19T15:13:02Z',html_url:'https://github.com/langewu9/tcm-mechanism',description:'远志 AI Scientist：中医药理研究平台（与 langewu9 合作开发）',tag:'合作开发'},
+  {name:'materialsearch-local',language:'Python',stargazers_count:0,fork:false,pushed_at:'2026-11-10',description:'本机运行 Chinese-CLIP 的素材语义搜索',tag:'私有',priv:true},
+  {name:'vibecoding',language:'Java',stargazers_count:0,fork:false,pushed_at:'2026-08-03',description:'Sliver Code：Spring Cloud 微服务 AI 智能体协作开发平台',tag:'私有',priv:true}
+];
+let REPOS=SNAP.repos, rMode='own';
+
+async function gh(path){
+  const key='gh:'+path;
+  try{const c=JSON.parse(localStorage.getItem(key)||'null'); if(c&&Date.now()-c.t<18e5) return c.d}catch(e){}
+  const r=await fetch(API+path,{headers:{Accept:'application/vnd.github+json'}});
+  if(!r.ok) throw new Error('GitHub '+r.status);
+  const d=await r.json();
+  try{localStorage.setItem(key,JSON.stringify({t:Date.now(),d}))}catch(e){}
+  return d;
+}
+function applyUser(){
+  const u=SNAP.user;
+  $$('[data-k=repos]').forEach(n=>n.textContent=u.public_repos);
+  $$('[data-k=followers]').forEach(n=>n.textContent=u.followers);
+  $$('[data-k=since]').forEach(n=>n.textContent=new Date(u.created_at).getFullYear());
+  const own=REPOS.filter(r=>!r.fork).sort((a,b)=>ts(b).localeCompare(ts(a)))[0];
+  if(own){const a=$('#latest'); a.textContent=own.name; a.href=own.html_url||GH+own.name}
+  const im=$('.avatar'); if(im&&u.avatar_url) im.src=u.avatar_url;
+}
+function renderRepos(){
+  const q=$('#q').value.trim().toLowerCase(), ul=$('#repoList');
+  let list=REPOS.concat(EXTRA).filter(r=>rMode==='all'||(rMode==='fork'?r.fork:!r.fork));
+  if(q) list=list.filter(r=>[r.name,DESC[r.name]||r.description||'',r.language||''].join(' ').toLowerCase().includes(q));
+  const cmp={updated:(a,b)=>ts(b).localeCompare(ts(a)),stars:(a,b)=>b.stargazers_count-a.stargazers_count||ts(b).localeCompare(ts(a)),name:(a,b)=>a.name.localeCompare(b.name)};
+  list.sort(cmp[$('#sort').value]);
+  ul.innerHTML='';
+  if(!list.length) ul.append(el('li','没有匹配的仓库','repo-empty'));
+  list.forEach(r=>{
+    const a=el('a'); if(r.priv){a.classList.add('priv');a.title='私有仓库'}else{a.href=r.html_url||GH+r.name; a.target='_blank'; a.rel='noopener'}
+    const n=el('span',r.name,'rn'); if(r.fork) n.append(el('em','Fork')); if(r.tag) n.append(el('em',r.tag));
+    const m=el('span',null,'rm');
+    if(r.language){const d=el('i'); d.style.setProperty('--c',LC[r.language]||'#a99d8a'); m.append(d,r.language+' · ')}
+    m.append((r.priv?'':'★ '+r.stargazers_count+' · ')+fmtDate(ts(r)));
+    a.append(n,el('span',DESC[r.name]||r.description||'—','rd'),m,el('span',r.priv?'—':'↗','ra'));
+    const li=el('li'); li.append(a); ul.append(li);
+  });
+  const own=REPOS.concat(EXTRA).filter(r=>!r.fork&&r.language), cnt={};
+  own.forEach(r=>cnt[r.language]=(cnt[r.language]||0)+1);
+  const bar=$('#langAll'), leg=$('#langAllLeg'); bar.innerHTML=''; leg.innerHTML='';
+  Object.entries(cnt).sort((a,b)=>b[1]-a[1]).forEach(([k,v])=>{
+    const c=LC[k]||'#a99d8a', s=el('i'); s.style.width=(v/own.length*100)+'%'; s.style.background=c; s.title=k; bar.append(s);
+    const t=el('span',k+' · '+v+' 个'); t.style.setProperty('--c',c); leg.append(t);
+  });
+}
+const EV={
+  PushEvent:e=>'推送了 '+(e.payload.size||(e.payload.commits||[]).length||1)+' 个提交',
+  CreateEvent:e=>e.payload.ref_type==='repository'?'创建了仓库':'创建了'+(e.payload.ref_type==='branch'?'分支 ':'标签 ')+(e.payload.ref||''),
+  DeleteEvent:e=>'删除了'+(e.payload.ref_type==='branch'?'分支 ':'标签 ')+(e.payload.ref||''),
+  WatchEvent:()=>'Star 了这个仓库',
+  ForkEvent:()=>'Fork 了这个仓库',
+  PublicEvent:()=>'公开了仓库',
+  ReleaseEvent:()=>'发布了新版本',
+  PullRequestEvent:e=>(e.payload.action==='opened'?'发起':'更新')+'了 Pull Request',
+  IssuesEvent:e=>(e.payload.action==='opened'?'提交':'更新')+'了 Issue',
+  IssueCommentEvent:()=>'评论了 Issue'
+};
+function rel(s){
+  const m=(Date.now()-new Date(s))/6e4;
+  if(m<60) return Math.max(1,Math.round(m))+' 分钟前';
+  if(m<1440) return Math.round(m/60)+' 小时前';
+  if(m<43200) return Math.round(m/1440)+' 天前';
+  return fmtDate(s);
+}
+function renderFeed(ev){
+  const items=(ev||[]).filter(e=>EV[e.type]).slice(0,8);
+  if(!items.length) return;
+  const ol=$('#feed'); ol.innerHTML='';
+  items.forEach(e=>{
+    const li=el('li'), a=el('a',e.repo.name.replace(USER+'/','')), rt=el('span',null,'role-t');
+    a.href='https://github.com/'+e.repo.name; a.target='_blank'; a.rel='noopener'; rt.append(a);
+    li.append(el('span',rel(e.created_at),'yr'),rt,el('span',e.type.replace('Event',''),'lang-t'),el('span',EV[e.type](e),'note'));
+    ol.append(li);
+  });
+  const s=$('#feedSync'); s.textContent='GitHub 公开动态 · 实时'; s.classList.add('live');
+}
+$$('#rf .chip').forEach(b=>b.addEventListener('click',()=>{rMode=b.dataset.r;$$('#rf .chip').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderRepos()}));
+$('#q').addEventListener('input',renderRepos);
+$('#sort').addEventListener('change',renderRepos);
+applyUser(); renderRepos();
+(async()=>{
+  const s=$('#sync');
+  try{
+    const [u,rs]=await Promise.all([gh('/users/'+USER),gh('/users/'+USER+'/repos?per_page=100&sort=pushed')]);
+    if(Array.isArray(rs)&&rs.length){SNAP.user=u; REPOS=rs; applyUser(); renderRepos()}
+    s.textContent='已与 GitHub 同步 · '+new Date().toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false}); s.classList.add('live');
+  }catch(e){s.textContent='暂时连不上 GitHub，显示的是 2026-11-25 的数据快照'}
+  try{renderFeed(await gh('/users/'+USER+'/events/public?per_page=30'))}catch(e){}
+})();
+
+const clock=$('#clock');
+const tick=()=>{clock.textContent=new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())};
+tick(); setInterval(tick,30000);
+$('#year').textContent=new Date().getFullYear();
+
+if(matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const c=$('.cursor'); c.hidden=false;
+  let x=innerWidth/2,y=innerHeight/2,tx=x,ty=y;
+  addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY});
+  (function loop(){x+=(tx-x)*.18;y+=(ty-y)*.18;c.style.transform=`translate(${x}px,${y}px)`;requestAnimationFrame(loop)})();
+  $$('a,button,.work').forEach(n=>{n.addEventListener('mouseenter',()=>c.classList.add('big'));n.addEventListener('mouseleave',()=>c.classList.remove('big'))});
+}
 </script>
 </body>
 </html>

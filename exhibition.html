@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang='zh-CN'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>浮光 · Ephemera — 一场关于光与时间的展览</title>
+<style>
+:root{
+  --paper:#efe8dc;
+  --paper-2:#e3d7c3;
+  --ink:#1c1a17;
+  --ink-soft:#6a6359;
+  --vermilion:#c4421f;
+  --ochre:#d89a3c;
+  --indigo:#1f2d4a;
+  --sage:#8a9a7b;
+  --serif:'Noto Serif SC','Source Han Serif SC','Songti SC','STSong','SimSun',serif;
+  --latin:'Cormorant Garamond','Playfair Display','Didot','Bodoni 72',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.28;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+a{color:inherit}
+
+.nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:26px 5vw;z-index:50;font-size:13px;letter-spacing:.3em;mix-blend-mode:difference;color:#f3ede3}
+.nav a{text-decoration:none;margin-left:2.6em}
+.nav .mark{font-family:var(--latin);font-style:italic;letter-spacing:.04em;font-size:22px;margin-left:0}
+
+.hero{position:relative;min-height:100vh;display:grid;place-items:center;overflow:hidden;isolation:isolate}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.85;mix-blend-mode:multiply;animation:drift 26s ease-in-out infinite alternate}
+.b1{width:52vmax;height:52vmax;background:radial-gradient(circle at 30% 30%,#f2b25c,#c4421f 72%);top:-16vmax;left:-12vmax}
+.b2{width:46vmax;height:46vmax;background:radial-gradient(circle at 60% 40%,#8ea3c6,#1f2d4a 76%);bottom:-20vmax;right:-10vmax;animation-duration:32s;animation-delay:-8s}
+.b3{width:26vmax;height:26vmax;background:radial-gradient(circle,#efdca8,#8a9a7b 82%);top:46%;left:58%;animation-duration:21s;animation-delay:-4s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(4vw,-3vh) scale(1.08)}100%{transform:translate(-3vw,4vh) scale(.95)}}
+.hero-inner{position:relative;text-align:center;z-index:2}
+.eyebrow{font-size:12px;letter-spacing:.6em;color:var(--ink);margin-bottom:2vh}
+.title{position:relative;display:inline-block;font-size:clamp(120px,24vw,360px);line-height:.95;font-weight:900;letter-spacing:-.02em}
+.title .echo{position:absolute;inset:0;color:transparent;-webkit-text-stroke:1.5px var(--vermilion);transform:translate(.05em,.04em);z-index:-1}
+.subtitle{font-family:var(--latin);font-style:italic;font-size:clamp(22px,3vw,40px);margin-top:1vh}
+.vertical{position:absolute;writing-mode:vertical-rl;font-size:14px;letter-spacing:.8em;color:var(--ink);z-index:2}
+.v-left{left:5vw;top:50%;transform:translateY(-50%)}
+.v-right{right:5vw;bottom:12vh}
+.scroll-cue{position:absolute;bottom:5vh;left:50%;width:1px;height:72px;margin-left:-.5px;background:linear-gradient(var(--ink),transparent);z-index:2;transform-origin:top;animation:cue 2.6s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.2;transform:scaleY(.4)}50%{opacity:1;transform:scaleY(1)}}
+
+section{padding:18vh 8vw}
+.manifesto{display:grid;grid-template-columns:1fr 2fr;gap:6vw;align-items:start;max-width:1400px;margin:0 auto}
+.index{font-family:var(--latin);font-size:15px;letter-spacing:.2em;color:var(--vermilion);position:sticky;top:16vh}
+.index b{display:block;font-size:120px;line-height:1;font-weight:300;font-style:italic;color:var(--ink);margin-top:10px}
+.lead{font-size:clamp(28px,3.2vw,50px);line-height:1.45;font-weight:900;margin-bottom:1.1em}
+.body p{font-size:clamp(17px,1.5vw,21px);margin-bottom:1.5em;text-align:justify;color:#2e2b26}
+.body p.drop::first-letter{float:left;font-size:4.6em;line-height:.95;margin:.05em .14em 0 0;color:var(--vermilion);font-weight:900}
+
+.strip{overflow:hidden;white-space:nowrap;border-block:1px solid var(--ink);padding:16px 0}
+.strip div{display:inline-block;animation:slide 45s linear infinite;font-family:var(--latin);font-style:italic;font-size:30px}
+.strip span{color:var(--vermilion);font-style:normal;font-family:var(--serif);margin:0 .6em}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+.gallery-head{display:flex;justify-content:space-between;align-items:flex-end;max-width:1400px;margin:0 auto 9vh;border-bottom:1px solid var(--ink);padding-bottom:20px;gap:20px}
+.gallery-head h2{font-size:clamp(44px,6.4vw,96px);font-weight:900;line-height:1}
+.gallery-head span{font-family:var(--latin);font-style:italic;font-size:22px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:7vw 3vw;max-width:1400px;margin:0 auto;align-items:start}
+.work{grid-column:span 4}
+.work.tall{grid-column:span 5}
+.work.wide{grid-column:span 7}
+.work.center{grid-column:3 / span 8}
+.work.offset{margin-top:14vh}
+.canvas{position:relative;aspect-ratio:4/5;overflow:hidden;box-shadow:0 34px 60px -34px rgba(28,26,23,.55);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.wide .canvas,.center .canvas{aspect-ratio:16/10}
+.work:hover .canvas{transform:translateY(-10px) rotate(-.5deg)}
+.canvas>*,.canvas::before,.canvas::after{position:absolute;content:''}
+.caption{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;gap:12px}
+.caption h3{font-size:20px;font-weight:700;line-height:1.4}
+.caption h3 i{font-family:var(--latin);font-weight:400;margin-left:.5em;color:var(--ink-soft)}
+.caption small{display:block;color:var(--ink-soft);font-size:13px;letter-spacing:.12em}
+.caption .no{font-family:var(--latin);font-style:italic;font-size:30px;color:var(--vermilion);line-height:1}
+
+.a1{background:linear-gradient(#f4dcae 0%,#eaa765 56%,#1f2d4a 56%)}
+.a1::before{width:56%;aspect-ratio:1;border-radius:50%;left:22%;top:30%;background:radial-gradient(circle,#c4421f 0 58%,#d9652f 59% 100%)}
+.a1::after{left:0;right:0;top:56%;bottom:0;background:repeating-linear-gradient(180deg,transparent 0 9px,#1f2d4a 9px 16px),linear-gradient(90deg,#1f2d4a 26%,#c4421f 26% 74%,#1f2d4a 74%);-webkit-mask:linear-gradient(#000 10%,transparent 85%);mask:linear-gradient(#000 10%,transparent 85%)}
+.a1 .base{left:0;right:0;top:56%;bottom:0;background:#1f2d4a;z-index:-1}
+
+.a2{background:repeating-radial-gradient(circle at 50% 112%,#1f2d4a 0 13px,#e3d7c3 13px 27px)}
+.a2::after{inset:0;background:linear-gradient(#efe8dc 0%,transparent 45%)}
+
+.a3{background:#dccdb3}
+.a3 .wall{inset:0 0 22% 0;background:linear-gradient(100deg,#e7dbc6 0 58%,#d3c2a4 58%)}
+.a3 .arch{left:10%;bottom:22%;width:26%;height:62%;background:#c4421f;border-radius:999px 999px 0 0}
+.a3 .orb{left:42%;bottom:22%;width:20%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a4d75,#1f2d4a 70%)}
+.a3 .half{right:12%;bottom:22%;width:22%;aspect-ratio:2/1;border-radius:999px 999px 0 0;background:#d89a3c}
+.a3 .shelf{left:0;right:0;bottom:0;height:22%;background:#8a7a62}
+.a3 .shadow{left:36%;bottom:12%;width:44%;height:10%;background:rgba(28,26,23,.25);filter:blur(6px);transform:skewX(-40deg)}
+
+.a4{background:conic-gradient(from 210deg at 32% 68%,#efe8dc,#d89a3c 18%,#c4421f 34%,#1f2d4a 55%,#8a9a7b 76%,#efe8dc)}
+.a4::before{inset:12%;border:1px solid rgba(239,232,220,.8);border-radius:50%}
+.a4::after{inset:28%;border:1px solid rgba(239,232,220,.5);border-radius:50%;transform:translate(14%,-10%)}
+
+.a5{background:radial-gradient(rgba(239,232,220,.75) 1px,transparent 1.6px) 0 0/22px 22px,linear-gradient(#0d1424,#1f2d4a 70%,#34466c)}
+.a5 .moon{width:34%;aspect-ratio:1;border-radius:50%;top:14%;right:16%;box-shadow:inset -22px 10px 0 0 #efe8dc}
+.a5 .trail{width:140%;height:1px;background:#c4421f;left:-20%;top:72%;transform:rotate(-24deg);box-shadow:0 0 12px #c4421f}
+.a5 .sea{left:0;right:0;bottom:0;height:20%;background:repeating-linear-gradient(180deg,#0d1424 0 4px,#1f2d4a 4px 7px)}
+
+.a6{background:#e3d7c3}
+.a6 span{border-radius:50%;filter:blur(34px);mix-blend-mode:multiply}
+.a6 .s1{width:46%;height:72%;left:8%;top:12%;background:#c4421f}
+.a6 .s2{width:40%;height:60%;left:38%;top:28%;background:#d89a3c}
+.a6 .s3{width:30%;height:46%;right:8%;top:6%;background:#8a9a7b}
+.a6 .s4{width:22%;height:34%;left:60%;bottom:4%;background:#1f2d4a;opacity:.8}
+
+.quote{background:var(--ink);color:var(--paper);text-align:center;padding:26vh 10vw;position:relative;overflow:hidden}
+.ring{position:absolute;left:50%;top:50%;border-radius:50%;pointer-events:none}
+.r1{width:70vmax;height:70vmax;margin:-35vmax 0 0 -35vmax;border:1px solid rgba(239,232,220,.12)}
+.r2{width:46vmax;height:46vmax;margin:-23vmax 0 0 -23vmax;border:1px dashed rgba(216,154,60,.35);animation:spin 120s linear infinite}
+.r3{width:10vmax;height:10vmax;margin:-26vmax 0 0 16vmax;background:radial-gradient(circle,#c4421f,transparent 70%);filter:blur(10px);opacity:.7}
+@keyframes spin{to{transform:rotate(360deg)}}
+.quote blockquote{position:relative;font-size:clamp(30px,4.4vw,66px);line-height:1.45;font-weight:900;max-width:15em;margin:0 auto}
+.quote blockquote em{font-style:normal;color:var(--ochre)}
+.quote cite{position:relative;display:block;margin-top:6vh;font-family:var(--latin);font-size:20px;letter-spacing:.12em;color:rgba(239,232,220,.6)}
+
+.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:5vh 4vw;max-width:1400px;margin:0 auto}
+.big-date{grid-column:1/-1;font-family:var(--latin);font-weight:300;font-size:clamp(56px,11vw,180px);line-height:1;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:4vh;flex-wrap:wrap}
+.big-date em{color:var(--vermilion);font-size:.5em}
+.visit h4{font-size:12px;letter-spacing:.5em;color:var(--vermilion);margin-bottom:14px;font-weight:400}
+.visit p{font-size:19px;line-height:1.7}
+footer{padding:5vh 8vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft);letter-spacing:.15em;border-top:1px solid rgba(28,26,23,.2)}
+footer .latin{font-family:var(--latin);font-style:italic;letter-spacing:.04em;font-size:16px;color:var(--ink)}
+
+@media (max-width:860px){
+  .manifesto,.visit{grid-template-columns:1fr}
+  .index{position:static}
+  .work,.work.tall,.work.wide,.work.center{grid-column:1/-1}
+  .work.offset{margin-top:0}
+  .vertical,.nav .links{display:none}
+  .gallery-head{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class='nav'>
+  <a class='mark' href='#top'>Ephemera</a>
+  <nav class='links'><a href='#intro'>序言</a><a href='#works'>作品</a><a href='#visit'>展讯</a></nav>
+</header>
+
+<section class='hero' id='top' style='padding:0'>
+  <div class='blob b1'></div>
+  <div class='blob b2'></div>
+  <div class='blob b3'></div>
+  <div class='vertical v-left'>光落下的地方 · 时间便有了形状</div>
+  <div class='vertical v-right'>二〇二六 · 冬</div>
+  <div class='hero-inner'>
+    <p class='eyebrow'>当代光影艺术展 · 第十二回</p>
+    <h1 class='title'><span class='echo' aria-hidden='true'>浮光</span>浮光</h1>
+    <p class='subtitle'>Ephemera — on light, and the time it takes</p>
+  </div>
+  <div class='scroll-cue'></div>
+</section>
+
+<section id='intro'>
+  <div class='manifesto'>
+    <div class='index'>PROLOGUE<b>i.</b></div>
+    <div class='body'>
+      <p class='lead'>我们看见的每一道光，<br>都来自过去。</p>
+      <p class='drop'>太阳的光在八分钟前出发，星光则可能早已走过千年。当它终于落在一面墙、一片水、一张脸上，那一刻便成为唯一的现在。《浮光》收集的，正是这些短暂的抵达。</p>
+      <p>六件作品，不用一张照片，只以色块、弧线与留白构成。它们像是被记住的光，而不是被记录的光——模糊、温暖，带着一点误差。</p>
+      <p>请慢一些看。站得远一些，再走近一些。光不会等人，但它会为停下来的人，多停留一会儿。</p>
+    </div>
+  </div>
+</section>
+
+<div class='strip' aria-hidden='true'><div>Light<span>光</span>Time<span>时</span>Shadow<span>影</span>Memory<span>忆</span>Tide<span>潮</span>Dusk<span>暮</span>Light<span>光</span>Time<span>时</span>Shadow<span>影</span>Memory<span>忆</span>Tide<span>潮</span>Dusk<span>暮</span></div></div>
+
+<section id='works'>
+  <div class='gallery-head'>
+    <h2>六种光</h2>
+    <span>Six works, drawn without a single image</span>
+  </div>
+  <div class='grid'>
+    <article class='work tall'>
+      <div class='canvas a1'><i class='base'></i></div>
+      <div class='caption'><div><h3>日落之前<i>Before Dusk</i></h3><small>色块与水平线 · 2026</small></div><span class='no'>01</span></div>
+    </article>
+    <article class='work wide offset'>
+      <div class='canvas a3'><i class='wall'></i><i class='shadow'></i><i class='arch'></i><i class='orb'></i><i class='half'></i><i class='shelf'></i></div>
+      <div class='caption'><div><h3>静物，午后三点<i>Still Life, 3 p.m.</i></h3><small>拱形、圆与影 · 2026</small></div><span class='no'>02</span></div>
+    </article>
+    <article class='work'>
+      <div class='canvas a2'></div>
+      <div class='caption'><div><h3>潮汐<i>Tide</i></h3><small>同心弧 · 2025</small></div><span class='no'>03</span></div>
+    </article>
+    <article class='work offset'>
+      <div class='canvas a4'></div>
+      <div class='caption'><div><h3>风的形状<i>Shape of Wind</i></h3><small>锥形渐变 · 2024</small></div><span class='no'>04</span></div>
+    </article>
+    <article class='work'>
+      <div class='canvas a5'><i class='moon'></i><i class='trail'></i><i class='sea'></i></div>
+      <div class='caption'><div><h3>夜航<i>Night Voyage</i></h3><small>点阵与新月 · 2026</small></div><span class='no'>05</span></div>
+    </article>
+    <article class='work center'>
+      <div class='canvas a6'><span class='s1'></span><span class='s2'></span><span class='s3'></span><span class='s4'></span></div>
+      <div class='caption'><div><h3>余温<i>Afterglow</i></h3><small>晕染 · 2026</small></div><span class='no'>06</span></div>
+    </article>
+  </div>
+</section>
+
+<section class='quote'>
+  <div class='ring r1'></div><div class='ring r2'></div><div class='ring r3'></div>
+  <blockquote>光并不照亮事物，<br><em>它让事物开始存在。</em></blockquote>
+  <cite>— 展览手记，第七页</cite>
+</section>
+
+<section id='visit'>
+  <div class='visit'>
+    <div class='big-date'><span>12.01</span><em>至</em><span>02.28</span></div>
+    <div><h4>日期</h4><p>2026 年 12 月 1 日<br>— 2027 年 2 月 28 日</p></div>
+    <div><h4>地点</h4><p>城市美术馆<br>三层 · 东厅</p></div>
+    <div><h4>开放时间</h4><p>周二至周日 10:00 — 18:00<br>周一闭馆</p></div>
+  </div>
+</section>
+
+<footer>
+  <span class='latin'>Ephemera © 2026</span>
+  <span>全部画面由 HTML 与 CSS 绘制 · 无图像</span>
+</footer>
+
+</body>
+</html>
